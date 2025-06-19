@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 21 Certification Mock Exam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="exam-container">
+        <header>
+            <h1>Java 21 Certification Mock Exam</h1>
+            <div class="exam-info">
+                <div class="timer">Time: <span id="time">60:00</span></div>
+                <div class="question-count">Question <span id="current-question">1</span>/<span id="total-questions">60</span></div>
+                <div class="score">Score: <span id="score">0</span>/60</div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="question-container">
+                <div class="question" id="question-text"></div>
+                <div class="options" id="options-container"></div>
+                <div class="navigation">
+                    <button id="prev-btn" disabled>Previous</button>
+                    <button id="next-btn">Next</button>
+                    <button id="submit-btn" style="display: none;">Submit Exam</button>
+                </div>
+				<div class="action-buttons">
+					<button id="redo-btn">Redo Exam</button>
+					<button id="view-results-btn">View Previous Results</button>
+				</div>
+            </div>
+            
+            <div class="explanation-container" id="explanation-container" style="display: none;">
+                <h3>Explanation</h3>
+                <div id="explanation-text"></div>
+                <button id="continue-btn">Continue</button>
+            </div>
+        </main>
+        
+        <footer>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

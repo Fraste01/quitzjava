@@ -1,0 +1,1321 @@
+[
+  {
+    "id": 1,
+    "question": "Which of the following is a valid Java 21 feature?",
+    "options": [
+      "Virtual Threads",
+      "Primitive classes",
+      "Non-null references",
+      "Operator overloading"
+    ],
+    "answer": 0,
+    "explanation": "Virtual Threads (Project Loom) were finalized in Java 21 as part of JEP 444."
+  },
+  {
+    "id": 2,
+    "question": "What is the output of 'System.out.println(1 + 2 + \"3\");' in Java?",
+    "options": [
+      "6",
+      "33",
+      "123",
+      "Compilation error"
+    ],
+    "answer": 1,
+    "explanation": "The + operator is left-associative, so 1 + 2 is evaluated first (resulting in 3), then 3 + \"3\" performs string concatenation."
+  },
+  {
+    "id": 3,
+    "question": "Which Java 21 feature allows for more concise pattern matching in switch expressions?",
+    "options": [
+      "Record Patterns",
+      "Sealed Classes",
+      "String Templates",
+      "Unnamed Patterns"
+    ],
+    "answer": 0,
+    "explanation": "Record Patterns (JEP 440) enhance pattern matching to allow decomposition of record values."
+  },
+  {
+    "id": 4,
+    "question": "What is the default value of a boolean variable in Java?",
+    "options": [
+      "true",
+      "false",
+      "null",
+      "0"
+    ],
+    "answer": 1,
+    "explanation": "The default value for boolean variables in Java is false."
+  },
+  {
+    "id": 5,
+    "question": "Which method is called when an object is created in Java?",
+    "options": [
+      "main()",
+      "init()",
+      "constructor",
+      "new()"
+    ],
+    "answer": 2,
+    "explanation": "Constructors are called when an object is instantiated to initialize the new object."
+  },
+  {
+    "id": 6,
+    "question": "What does the 'final' keyword indicate when applied to a class?",
+    "options": [
+      "The class cannot be instantiated",
+      "The class cannot be extended",
+      "The class cannot have any fields",
+      "The class cannot have any methods"
+    ],
+    "answer": 1,
+    "explanation": "A final class cannot be subclassed or extended by other classes."
+  },
+  {
+    "id": 7,
+    "question": "Which Java 21 feature introduces string interpolation?",
+    "options": [
+      "Text Blocks",
+      "String Templates",
+      "Pattern Matching",
+      "Raw String Literals"
+    ],
+    "answer": 1,
+    "explanation": "String Templates (JEP 430) introduce string interpolation in Java 21."
+  },
+  {
+    "id": 8,
+    "question": "What is the correct way to declare a constant in Java?",
+    "options": [
+      "const int SIZE = 10;",
+      "final int SIZE = 10;",
+      "static int SIZE = 10;",
+      "constant int SIZE = 10;"
+    ],
+    "answer": 1,
+    "explanation": "The 'final' keyword is used to declare constants in Java."
+  },
+  {
+    "id": 9,
+    "question": "Which collection implements a last-in-first-out (LIFO) principle?",
+    "options": [
+      "Queue",
+      "Set",
+      "List",
+      "Stack"
+    ],
+    "answer": 3,
+    "explanation": "Stack implements LIFO, though Deque is now preferred over Stack."
+  },
+  {
+    "id": 10,
+    "question": "What is the parent class of all Java classes?",
+    "options": [
+      "Object",
+      "Class",
+      "Super",
+      "Parent"
+    ],
+    "answer": 0,
+    "explanation": "The Object class is the root of the class hierarchy in Java."
+  },
+  {
+    "id": 11,
+    "question": "Which Java 21 feature helps prevent memory leaks in concurrent programming?",
+    "options": [
+      "Scoped Values",
+      "Virtual Threads",
+      "Structured Concurrency",
+      "Memory Segments"
+    ],
+    "answer": 2,
+    "explanation": "Structured Concurrency (JEP 453) helps manage multiple threads and prevents thread leaks."
+  },
+  {
+    "id": 12,
+    "question": "What is the output of 'System.out.println(9/0);'?",
+    "options": [
+      "0",
+      "Infinity",
+      "ArithmeticException",
+      "Compilation error"
+    ],
+    "answer": 2,
+    "explanation": "Division by zero throws an ArithmeticException at runtime."
+  },
+  {
+    "id": 13,
+    "question": "Which keyword is used to prevent method overriding?",
+    "options": [
+      "static",
+      "final",
+      "private",
+      "sealed"
+    ],
+    "answer": 1,
+    "explanation": "The 'final' keyword prevents a method from being overridden in subclasses."
+  },
+  {
+    "id": 14,
+    "question": "What is the default capacity of an ArrayList in Java?",
+    "options": [
+      "0",
+      "10",
+      "16",
+      "32"
+    ],
+    "answer": 1,
+    "explanation": "The default initial capacity of an ArrayList is 10."
+  },
+  {
+    "id": 15,
+    "question": "Which Java 21 feature allows for better encapsulation of immutable data?",
+    "options": [
+      "Records",
+      "Enums",
+      "Sealed Classes",
+      "Value Objects"
+    ],
+    "answer": 0,
+    "explanation": "Records (introduced in Java 16, enhanced in 21) provide a compact syntax for declaring classes that are transparent holders for shallowly immutable data."
+  },
+  {
+    "id": 16,
+    "question": "What is the correct way to handle checked exceptions?",
+    "options": [
+      "Ignore them",
+      "Handle with try-catch or declare with throws",
+      "Convert them to runtime exceptions",
+      "All of the above"
+    ],
+    "answer": 1,
+    "explanation": "Checked exceptions must be either caught in a try-catch block or declared in the method signature with throws."
+  },
+  {
+    "id": 17,
+    "question": "Which interface must a class implement to be used in a for-each loop?",
+    "options": [
+      "Serializable",
+      "Comparable",
+      "Iterable",
+      "Cloneable"
+    ],
+    "answer": 2,
+    "explanation": "The Iterable interface allows an object to be the target of the for-each loop."
+  },
+  {
+    "id": 18,
+    "question": "What is the purpose of the 'default' keyword in Java interfaces?",
+    "options": [
+      "To specify the default access modifier",
+      "To provide a default implementation for a method",
+      "To mark the interface as non-extendable",
+      "To indicate the default package"
+    ],
+    "answer": 1,
+    "explanation": "The 'default' keyword in interfaces allows providing a default implementation for a method."
+  },
+  {
+    "id": 19,
+    "question": "Which Java 21 feature simplifies the creation of immutable collections?",
+    "options": [
+      "Collection Factory Methods",
+      "Records",
+      "Sealed Classes",
+      "Pattern Matching"
+    ],
+    "answer": 0,
+    "explanation": "Collection factory methods like List.of(), Set.of(), etc. provide simple ways to create immutable collections."
+  },
+  {
+    "id": 20,
+    "question": "What is the output of 'System.out.println(\"Java\".equals(\"java\"));'?",
+    "options": [
+      "true",
+      "false",
+      "Compilation error",
+      "Runtime exception"
+    ],
+    "answer": 1,
+    "explanation": "The equals() method is case-sensitive, so \"Java\" is not equal to \"java\"."
+  },
+  {
+    "id": 21,
+    "question": "Which Java 21 feature allows restricting which classes can extend a class or interface?",
+    "options": [
+      "Records",
+      "Sealed Classes",
+      "Final Classes",
+      "Private Interfaces"
+    ],
+    "answer": 1,
+    "explanation": "Sealed Classes (JEP 409) allow you to control which classes can extend or implement them."
+  },
+  {
+    "id": 22,
+    "question": "What is the purpose of the 'transient' keyword in Java?",
+    "options": [
+      "To indicate a variable should not be serialized",
+      "To make a variable thread-safe",
+      "To create temporary variables",
+      "To mark variables for garbage collection"
+    ],
+    "answer": 0,
+    "explanation": "The 'transient' keyword indicates that a field should not be part of the serialization process."
+  },
+  {
+    "id": 23,
+    "question": "Which Java 21 feature improves switch expressions with pattern matching?",
+    "options": [
+      "Pattern Matching for switch",
+      "Enhanced Switch",
+      "Smart Switches",
+      "Switch Expressions"
+    ],
+    "answer": 0,
+    "explanation": "Pattern Matching for switch (JEP 441) enhances switch expressions and statements with pattern matching."
+  },
+  {
+    "id": 24,
+    "question": "What is the correct way to compare two strings for equality in Java?",
+    "options": [
+      "str1 == str2",
+      "str1.equals(str2)",
+      "str1.compareTo(str2)",
+      "Both B and C"
+    ],
+    "answer": 3,
+    "explanation": "The equals() method compares content, while compareTo() compares lexicographical order. == compares references."
+  },
+  {
+    "id": 25,
+    "question": "Which Java 21 feature introduces unnamed patterns and variables?",
+    "options": [
+      "JEP 443",
+      "JEP 432",
+      "JEP 445",
+      "JEP 456"
+    ],
+    "answer": 0,
+    "explanation": "JEP 443 introduces unnamed patterns and variables (denoted by _) to improve readability when patterns or variables aren't needed."
+  },
+  {
+    "id": 26,
+    "question": "What is the purpose of the 'volatile' keyword in Java?",
+    "options": [
+      "To indicate a variable may be modified by multiple threads",
+      "To make a variable constant",
+      "To improve variable access speed",
+      "To mark a variable for garbage collection"
+    ],
+    "answer": 0,
+    "explanation": "The 'volatile' keyword ensures that reads and writes to the variable are atomic and visible to all threads."
+  },
+  {
+    "id": 27,
+    "question": "Which Java 21 feature simplifies the creation of HTTP clients?",
+    "options": [
+      "HttpClient API",
+      "WebSockets API",
+      "URLConnection",
+      "HttpURLConnection"
+    ],
+    "answer": 0,
+    "explanation": "The HttpClient API (introduced in Java 11, enhanced since) provides a modern API for HTTP clients."
+  },
+  {
+    "id": 28,
+    "question": "What is the output of 'System.out.println(10 + 20 + \"30\" + 40);'?",
+    "options": [
+      "303040",
+      "10302040",
+      "3070",
+      "3040"
+    ],
+    "answer": 0,
+    "explanation": "First 10+20=30, then 30+\"30\"=\"3030\", then \"3030\"+40=\"303040\"."
+  },
+  {
+    "id": 29,
+    "question": "Which Java 21 feature improves garbage collection for large heaps?",
+    "options": [
+      "ZGC",
+      "G1GC",
+      "Shenandoah",
+      "Parallel GC"
+    ],
+    "answer": 0,
+    "explanation": "ZGC (Z Garbage Collector) is designed for low-latency and scalability to large heaps."
+  },
+  {
+    "id": 30,
+    "question": "What is the purpose of the 'assert' keyword in Java?",
+    "options": [
+      "To throw exceptions",
+      "To create unit tests",
+      "To verify assumptions during development",
+      "To log debug information"
+    ],
+    "answer": 2,
+    "explanation": "The 'assert' keyword is used to verify assumptions during development (disabled by default at runtime)."
+  },
+  {
+    "id": 31,
+    "question": "Which Java 21 feature introduces sequenced collections?",
+    "options": [
+      "JEP 431",
+      "JEP 409",
+      "JEP 440",
+      "JEP 453"
+    ],
+    "answer": 0,
+    "explanation": "JEP 431 introduces sequenced collections with well-defined encounter order."
+  },
+  {
+    "id": 32,
+    "question": "What is the correct way to create an immutable list in Java?",
+    "options": [
+      "new ArrayList()",
+      "List.of()",
+      "Collections.emptyList()",
+      "Both B and C"
+    ],
+    "answer": 3,
+    "explanation": "Both List.of() and Collections.emptyList() create immutable lists."
+  },
+  {
+    "id": 33,
+    "question": "Which Java 21 feature improves foreign function and memory access?",
+    "options": [
+      "JNI",
+      "JNA",
+      "Foreign Function & Memory API",
+      "Native Access API"
+    ],
+    "answer": 2,
+    "explanation": "The Foreign Function & Memory API (JEP 442) provides a pure-Java way to interoperate with native code and data."
+  },
+  {
+    "id": 34,
+    "question": "What is the purpose of the 'strictfp' keyword in Java?",
+    "options": [
+      "To enforce strict floating-point calculations",
+      "To make methods faster",
+      "To restrict method access",
+      "To mark methods as deprecated"
+    ],
+    "answer": 0,
+    "explanation": "The 'strictfp' keyword ensures floating-point calculations are exactly the same across different platforms."
+  },
+  {
+    "id": 35,
+    "question": "Which Java 21 feature introduces preview APIs for custom memory layouts?",
+    "options": [
+      "Memory Segments",
+      "Value Objects",
+      "Foreign Memory Access",
+      "Native Layouts"
+    ],
+    "answer": 0,
+    "explanation": "Memory Segments (part of the Foreign Function & Memory API) allow for custom memory layouts."
+  },
+  {
+    "id": 36,
+    "question": "What is the output of 'System.out.println(1_000 + \" \" + 1_000L);'?",
+    "options": [
+      "1000 1000",
+      "1000 1000L",
+      "1_000 1_000L",
+      "Compilation error"
+    ],
+    "answer": 0,
+    "explanation": "Underscores in numeric literals are ignored, and the L suffix doesn't appear in the output."
+  },
+  {
+    "id": 37,
+    "question": "Which Java 21 feature improves the performance of small string concatenations?",
+    "options": [
+      "StringBuilder",
+      "StringBuffer",
+      "String Templates",
+      "Indify String Concatenation"
+    ],
+    "answer": 3,
+    "explanation": "Indify String Concatenation (JEP 280) optimizes string concatenation at compile time."
+  },
+  {
+    "id": 38,
+    "question": "What is the purpose of the 'native' keyword in Java?",
+    "options": [
+      "To indicate a method is implemented in another language",
+      "To mark methods as platform-specific",
+      "To optimize performance",
+      "To indicate a method is part of the Java Native Interface"
+    ],
+    "answer": 0,
+    "explanation": "The 'native' keyword indicates that a method is implemented in platform-dependent code (typically C/C++)."
+  },
+  {
+    "id": 39,
+    "question": "Which Java 21 feature introduces preview APIs for vector computations?",
+    "options": [
+      "Vector API",
+      "SIMD API",
+      "Parallel Streams",
+      "Math API"
+    ],
+    "answer": 0,
+    "explanation": "The Vector API (JEP 448) provides a way to express vector computations."
+  },
+  {
+    "id": 40,
+    "question": "What is the output of 'System.out.println(0x10);'?",
+    "options": [
+      "10",
+      "16",
+      "0x10",
+      "Compilation error"
+    ],
+    "answer": 1,
+    "explanation": "0x10 is hexadecimal notation for the decimal value 16."
+  },
+  {
+    "id": 41,
+    "question": "Which Java 21 feature improves the performance of cryptographic operations?",
+    "options": [
+      "JCA",
+      "JCE",
+      "SunEC Provider",
+      "KeyStore API"
+    ],
+    "answer": 2,
+    "explanation": "The SunEC provider has been enhanced in Java 21 with improved performance for elliptic curve cryptography."
+  },
+  {
+    "id": 42,
+    "question": "What is the purpose of the 'yield' keyword in Java?",
+    "options": [
+      "To pause thread execution",
+      "To return a value from a switch expression",
+      "To implement coroutines",
+      "To mark methods as deprecated"
+    ],
+    "answer": 1,
+    "explanation": "The 'yield' keyword is used to return a value from a switch expression."
+  },
+  {
+    "id": 43,
+    "question": "Which Java 21 feature introduces preview APIs for scoped values?",
+    "options": [
+      "JEP 429",
+      "JEP 443",
+      "JEP 446",
+      "JEP 453"
+    ],
+    "answer": 2,
+    "explanation": "JEP 446 introduces Scoped Values (preview) for sharing immutable data within and across threads."
+  },
+  {
+    "id": 44,
+    "question": "What is the output of 'System.out.println(Math.floor(-2.5));'?",
+    "options": [
+      "-2.0",
+      "-3.0",
+      "-2.5",
+      "2.0"
+    ],
+    "answer": 1,
+    "explanation": "Math.floor() returns the largest (closest to positive infinity) double value that is less than or equal to the argument."
+  },
+  {
+    "id": 45,
+    "question": "Which Java 21 feature improves the performance of deserialization?",
+    "options": [
+      "Record Serialization",
+      "Compact Serialization",
+      "Fast Serialization",
+      "Object Streams"
+    ],
+    "answer": 0,
+    "explanation": "Record Serialization has been optimized in Java 21 for better performance."
+  },
+  {
+    "id": 46,
+    "question": "What is the purpose of the 'var' keyword in Java?",
+    "options": [
+      "To declare variables with dynamic typing",
+      "To declare variables with type inference",
+      "To create variant types",
+      "To mark variables as volatile"
+    ],
+    "answer": 1,
+    "explanation": "The 'var' keyword allows local variable type inference (the compiler infers the type from the initializer)."
+  },
+  {
+    "id": 47,
+    "question": "Which Java 21 feature introduces preview APIs for primitive types in patterns?",
+    "options": [
+      "Primitive Patterns",
+      "Type Patterns",
+      "Record Patterns",
+      "Unnamed Patterns"
+    ],
+    "answer": 0,
+    "explanation": "Primitive Patterns (part of pattern matching) allow primitive types in pattern matching constructs."
+  },
+  {
+    "id": 48,
+    "question": "What is the output of 'System.out.println(Stream.of(1,2,3).mapToInt(i -> i).sum());'?",
+    "options": [
+      "6",
+      "123",
+      "Compilation error",
+      "Runtime exception"
+    ],
+    "answer": 0,
+    "explanation": "The code creates a stream of integers 1, 2, 3, converts to IntStream, and sums them (1+2+3=6)."
+  },
+  {
+    "id": 49,
+    "question": "Which Java 21 feature improves the performance of stream operations?",
+    "options": [
+      "Parallel Streams",
+      "Stream Pipelines",
+      "Stream Gatherers",
+      "Lazy Evaluation"
+    ],
+    "answer": 2,
+    "explanation": "Stream Gatherers (JEP 461) introduce intermediate operations that can transform streams more efficiently."
+  },
+  {
+    "id": 50,
+    "question": "What is the purpose of the 'sealed' keyword in Java?",
+    "options": [
+      "To prevent class instantiation",
+      "To restrict which classes can extend a class or interface",
+      "To make classes immutable",
+      "To mark classes as serializable"
+    ],
+    "answer": 1,
+    "explanation": "The 'sealed' keyword restricts which other classes or interfaces may extend or implement it."
+  },
+  {
+    "id": 51,
+    "question": "Which Java 21 feature introduces preview APIs for string templates?",
+    "options": [
+      "JEP 430",
+      "JEP 440",
+      "JEP 453",
+      "JEP 459"
+    ],
+    "answer": 0,
+    "explanation": "JEP 430 introduces String Templates (preview) for string interpolation and template processing."
+  },
+  {
+    "id": 52,
+    "question": "What is the output of 'System.out.println(Optional.ofNullable(null).orElse(\"default\"));'?",
+    "options": [
+      "null",
+      "default",
+      "Optional.empty",
+      "NoSuchElementException"
+    ],
+    "answer": 1,
+    "explanation": "ofNullable(null) creates an empty Optional, and orElse() returns the default value."
+  },
+  {
+    "id": 53,
+    "question": "Which Java 21 feature improves the performance of concurrent collections?",
+    "options": [
+      "ConcurrentHashMap",
+      "CopyOnWriteArrayList",
+      "Synchronized Collections",
+      "Lock-Free Data Structures"
+    ],
+    "answer": 3,
+    "explanation": "Java 21 includes improvements to lock-free data structures for better concurrent performance."
+  },
+  {
+    "id": 54,
+    "question": "What is the purpose of the 'permits' keyword in Java?",
+    "options": [
+      "To grant permissions",
+      "To list allowed subclasses of a sealed class",
+      "To enable method access",
+      "To control serialization"
+    ],
+    "answer": 1,
+    "explanation": "The 'permits' clause in a sealed class lists the classes allowed to extend it."
+  },
+  {
+    "id": 55,
+    "question": "Which Java 21 feature introduces preview APIs for unnamed classes?",
+    "options": [
+      "JEP 445",
+      "JEP 432",
+      "JEP 443",
+      "JEP 456"
+    ],
+    "answer": 0,
+    "explanation": "JEP 445 introduces Unnamed Classes (preview) to simplify small programs."
+  },
+  {
+    "id": 56,
+    "question": "What is the output of 'System.out.println(IntStream.range(1,4).reduce(1, (a,b) -> a*b));'?",
+    "options": [
+      "6",
+      "24",
+      "10",
+      "Compilation error"
+    ],
+    "answer": 0,
+    "explanation": "The code calculates the product of numbers 1, 2, 3 (1*2*3=6) with an initial value of 1."
+  },
+  {
+    "id": 57,
+    "question": "Which Java 21 feature improves the performance of file I/O operations?",
+    "options": [
+      "NIO.2",
+      "Files API",
+      "Memory-Mapped Files",
+      "Asynchronous I/O"
+    ],
+    "answer": 2,
+    "explanation": "Memory-mapped files have been optimized in Java 21 for better performance."
+  },
+  {
+    "id": 58,
+    "question": "What is the purpose of the 'non-sealed' keyword in Java?",
+    "options": [
+      "To make a class final",
+      "To allow unrestricted extension of a sealed class hierarchy",
+      "To prevent serialization",
+      "To mark classes as non-thread-safe"
+    ],
+    "answer": 1,
+    "explanation": "'non-sealed' allows a class in a sealed hierarchy to be extended by unknown classes."
+  },
+  {
+    "id": 59,
+    "question": "Which Java 21 feature introduces preview APIs for structured concurrency?",
+    "options": [
+      "JEP 428",
+      "JEP 453",
+      "JEP 443",
+      "JEP 430"
+    ],
+    "answer": 1,
+    "explanation": "JEP 453 introduces Structured Concurrency (preview) to simplify multithreaded programming."
+  },
+  {
+    "id": 60,
+    "question": "What is the output of 'System.out.println(Pattern.matches(\"[a-z]+\", \"Hello\"));'?",
+    "options": [
+      "true",
+      "false",
+      "PatternSyntaxException",
+      "NullPointerException"
+    ],
+    "answer": 1,
+    "explanation": "The pattern [a-z]+ matches only lowercase letters, while \"Hello\" contains an uppercase H."
+  },{
+        "id": 61,
+        "question": "Which Java 21 feature introduces the ability to create HTTP servers without external dependencies?",
+        "options": [
+            "JEP 408",
+            "JEP 413",
+            "JEP 425",
+            "JEP 432"
+        ],
+        "answer": 0,
+        "explanation": "JEP 408: Simple Web Server introduces a minimal HTTP server for prototyping and testing."
+    },
+    {
+        "id": 62,
+        "question": "What is the purpose of the --enable-preview flag in Java 21?",
+        "options": [
+            "To enable experimental GC algorithms",
+            "To use preview features",
+            "To activate performance monitoring",
+            "To disable security restrictions"
+        ],
+        "answer": 1,
+        "explanation": "The --enable-preview flag is required to use preview language features that aren't yet finalized."
+    },
+    {
+        "id": 63,
+        "question": "Which method was added to the String class in Java 21 for string templating?",
+        "options": [
+            "interpolate()",
+            "template()",
+            "format()",
+            "process()"
+        ],
+        "answer": 3,
+        "explanation": "The process() method is used with String Templates (JEP 430) for template processing."
+    },
+    {
+        "id": 64,
+        "question": "In Java 21's pattern matching, what does _ (underscore) represent?",
+        "options": [
+            "Wildcard pattern",
+            "Unnamed variable",
+            "Placeholder for future use",
+            "All of the above"
+        ],
+        "answer": 1,
+        "explanation": "The underscore denotes an unnamed variable in pattern matching (JEP 443)."
+    },
+    {
+        "id": 65,
+        "question": "Which Java 21 improvement helps reduce memory usage for small objects?",
+        "options": [
+            "Compressed Oops",
+            "Value Objects",
+            "Object Trimming",
+            "Primitive Classes"
+        ],
+        "answer": 3,
+        "explanation": "Primitive Classes (preview) provide a way to declare classes that behave like primitives with less overhead."
+    },
+    {
+        "id": 66,
+        "question": "What is the purpose of the new ScopedValue API in Java 21?",
+        "options": [
+            "Memory segmentation",
+            "Thread-local data sharing",
+            "Value-based caching",
+            "Scope-based security"
+        ],
+        "answer": 1,
+        "explanation": "ScopedValue (JEP 446) provides a way to share immutable data within and across threads."
+    },
+    {
+        "id": 67,
+        "question": "Which Java 21 feature improves startup time for small programs?",
+        "options": [
+            "AOT Compilation",
+            "Class Data Sharing",
+            "Unnamed Classes",
+            "Dynamic CDS"
+        ],
+        "answer": 2,
+        "explanation": "Unnamed Classes (JEP 445) simplify small programs by eliminating boilerplate."
+    },
+    {
+        "id": 68,
+        "question": "What does the new Stream::gather method introduced in Java 21 do?",
+        "options": [
+            "Collects elements to a list",
+            "Provides custom intermediate operations",
+            "Groups elements by key",
+            "Parallelizes stream processing"
+        ],
+        "answer": 1,
+        "explanation": "Stream::gather (JEP 461) enables custom intermediate operations on streams."
+    },
+    {
+        "id": 69,
+        "question": "Which Java 21 enhancement improves switch pattern matching?",
+        "options": [
+            "Nested patterns",
+            "Guard patterns",
+            "Primitive type patterns",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "Java 21 enhanced pattern matching with all these capabilities (JEP 441)."
+    },
+    {
+        "id": 70,
+        "question": "What is the purpose of the new MemorySegment::ofAddress method in Java 21?",
+        "options": [
+            "Memory allocation",
+            "Native memory access",
+            "Address arithmetic",
+            "Memory protection"
+        ],
+        "answer": 1,
+        "explanation": "This method (part of FFM API) helps work with native memory addresses safely."
+    },
+    {
+        "id": 71,
+        "question": "Which Java 21 feature improves the performance of cryptographic algorithms?",
+        "options": [
+            "JEP 452",
+            "JEP 454",
+            "JEP 457",
+            "JEP 459"
+        ],
+        "answer": 3,
+        "explanation": "JEP 459: SHA-3 Implementation provides optimized SHA-3 hash algorithms."
+    },
+    {
+        "id": 72,
+        "question": "What is the purpose of the new Math.clamp() method in Java 21?",
+        "options": [
+            "Round floating-point numbers",
+            "Constrain values within a range",
+            "Calculate mathematical constants",
+            "Optimize arithmetic operations"
+        ],
+        "answer": 1,
+        "explanation": "Math.clamp() restricts a value to stay within specified minimum and maximum bounds."
+    },
+    {
+        "id": 73,
+        "question": "In Java 21's Vector API, what does the F64Vector class represent?",
+        "options": [
+            "64-bit floating-point vector",
+            "64-element vector",
+            "64-byte vector",
+            "64-bit integer vector"
+        ],
+        "answer": 0,
+        "explanation": "F64Vector handles vectors of 64-bit floating-point numbers (doubles)."
+    },
+    {
+        "id": 74,
+        "question": "Which Java 21 enhancement improves the performance of ArrayList?",
+        "options": [
+            "Lazy allocation",
+            "Compact storage",
+            "Parallel operations",
+            "Direct memory access"
+        ],
+        "answer": 1,
+        "explanation": "ArrayList now uses more compact storage for better memory efficiency."
+    },
+    {
+        "id": 75,
+        "question": "What is the purpose of the new Collections.disjoint() overload in Java 21?",
+        "options": [
+            "Compare collection sizes",
+            "Check for overlapping elements",
+            "Merge two collections",
+            "Find differences between collections"
+        ],
+        "answer": 1,
+        "explanation": "The new overload efficiently checks if two collections have no elements in common."
+    },
+    {
+        "id": 76,
+        "question": "Which Java 21 feature introduces the SequencedCollection interface?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "JEP 431: Sequenced Collections introduces new interfaces for collections with defined encounter order."
+    },
+    {
+        "id": 77,
+        "question": "What is the purpose of the new Thread.sleepNanos() method in Java 21?",
+        "options": [
+            "More precise sleep timing",
+            "Nanosecond-level thread scheduling",
+            "Hardware-accelerated waiting",
+            "Thread performance monitoring"
+        ],
+        "answer": 0,
+        "explanation": "sleepNanos() provides nanosecond-precision sleep for time-sensitive operations."
+    },
+    {
+        "id": 78,
+        "question": "Which Java 21 improvement helps reduce garbage collection pauses?",
+        "options": [
+            "Generational ZGC",
+            "Parallel GC enhancements",
+            "G1 GC optimizations",
+            "Epsilon GC improvements"
+        ],
+        "answer": 0,
+        "explanation": "Generational ZGC (JEP 439) reduces pause times by segregating young and old objects."
+    },
+    {
+        "id": 79,
+        "question": "What does the new Pattern.splitAsStream() method do in Java 21?",
+        "options": [
+            "Splits strings using regex",
+            "Creates parallel streams",
+            "Optimizes stream processing",
+            "Combines multiple patterns"
+        ],
+        "answer": 0,
+        "explanation": "splitAsStream() efficiently splits strings into streams using regular expressions."
+    },
+    {
+        "id": 80,
+        "question": "Which Java 21 feature improves the performance of BigDecimal operations?",
+        "options": [
+            "New algorithms",
+            "Hardware acceleration",
+            "Compact internal representation",
+            "Parallel computation"
+        ],
+        "answer": 2,
+        "explanation": "BigDecimal now uses a more memory-efficient internal storage format."
+    },
+    {
+        "id": 81,
+        "question": "What is the purpose of the new Files.readAttributes() overload in Java 21?",
+        "options": [
+            "Faster file operations",
+            "More secure attribute reading",
+            "Extended attribute support",
+            "Bulk attribute reading"
+        ],
+        "answer": 3,
+        "explanation": "The new overload allows reading multiple file attributes in a single operation."
+    },
+    {
+        "id": 82,
+        "question": "Which Java 21 enhancement improves the performance of HashMap?",
+        "options": [
+            "Better hash distribution",
+            "Reduced memory overhead",
+            "Faster resizing",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "HashMap received multiple optimizations including all listed improvements."
+    },
+    {
+        "id": 83,
+        "question": "What is the purpose of the new Collections.unmodifiableSequencedCollection() method?",
+        "options": [
+            "Create immutable collections",
+            "Preserve collection order",
+            "Optimize memory usage",
+            "Enable parallel processing"
+        ],
+        "answer": 0,
+        "explanation": "This method creates unmodifiable views of sequenced collections."
+    },
+    {
+        "id": 84,
+        "question": "Which Java 21 feature introduces the HexFormat class?",
+        "options": [
+            "JEP 425",
+            "JEP 430",
+            "JEP 448",
+            "JEP 451"
+        ],
+        "answer": 3,
+        "explanation": "JEP 451: HexFormat provides standardized hexadecimal formatting and parsing."
+    },
+    {
+        "id": 85,
+        "question": "What is the purpose of the new Thread.Builder API in Java 21?",
+        "options": [
+            "Thread configuration",
+            "Virtual thread creation",
+            "Thread pool management",
+            "Thread monitoring"
+        ],
+        "answer": 0,
+        "explanation": "Thread.Builder provides a fluent API for configuring thread properties."
+    },
+    {
+        "id": 86,
+        "question": "Which Java 21 improvement helps with memory-mapped file operations?",
+        "options": [
+            "JEP 452",
+            "JEP 454",
+            "JEP 456",
+            "JEP 458"
+        ],
+        "answer": 1,
+        "explanation": "JEP 454: Foreign Function & Memory API includes improved memory-mapped file support."
+    },
+    {
+        "id": 87,
+        "question": "What does the new Arrays.mismatch() method do in Java 21?",
+        "options": [
+            "Finds differing array elements",
+            "Compares array contents",
+            "Detects array bounds issues",
+            "Optimizes array copying"
+        ],
+        "answer": 0,
+        "explanation": "mismatch() finds and returns the index of the first differing elements between arrays."
+    },
+    {
+        "id": 88,
+        "question": "Which Java 21 feature improves the performance of stream pipelines?",
+        "options": [
+            "Lazy evaluation",
+            "Parallel processing",
+            "Short-circuit operations",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "Stream pipelines received multiple optimizations in Java 21."
+    },
+    {
+        "id": 89,
+        "question": "What is the purpose of the new Collections.synchronizedSequencedCollection() method?",
+        "options": [
+            "Thread-safe collections",
+            "Order-preserving synchronization",
+            "Concurrent modification detection",
+            "Lock-free iteration"
+        ],
+        "answer": 1,
+        "explanation": "This method creates synchronized views that preserve collection order."
+    },
+    {
+        "id": 90,
+        "question": "Which Java 21 enhancement improves the performance of String concatenation?",
+        "options": [
+            "StringBuilder optimizations",
+            "New bytecode instructions",
+            "Compiler improvements",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "String concatenation benefits from multiple low-level optimizations."
+    },
+    {
+        "id": 91,
+        "question": "What is the purpose of the new Files.isSameFile() optimization in Java 21?",
+        "options": [
+            "Faster file comparison",
+            "Case-insensitive checking",
+            "Symbolic link handling",
+            "Network file support"
+        ],
+        "answer": 0,
+        "explanation": "The optimized implementation reduces filesystem operations when comparing paths."
+    },
+    {
+        "id": 92,
+        "question": "Which Java 21 feature introduces the SequencedSet interface?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "SequencedSet (part of JEP 431) extends Set with sequenced operations."
+    },
+    {
+        "id": 93,
+        "question": "What is the purpose of the new Collections.unmodifiableSequencedMap() method?",
+        "options": [
+            "Immutable map creation",
+            "Order-preserving maps",
+            "Memory-efficient storage",
+            "Concurrent access"
+        ],
+        "answer": 0,
+        "explanation": "This method creates unmodifiable views of sequenced maps."
+    },
+    {
+        "id": 94,
+        "question": "Which Java 21 improvement helps with ZIP file operations?",
+        "options": [
+            "Faster compression",
+            "Better memory management",
+            "Improved CRC calculation",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "The ZIP filesystem provider received multiple optimizations."
+    },
+    {
+        "id": 95,
+        "question": "What does the new Arrays.compare() method do in Java 21?",
+        "options": [
+            "Element-wise comparison",
+            "Memory efficiency comparison",
+            "Performance benchmarking",
+            "Type compatibility checking"
+        ],
+        "answer": 0,
+        "explanation": "compare() performs lexicographical comparison of array elements."
+    },
+    {
+        "id": 96,
+        "question": "Which Java 21 feature introduces the SequencedMap interface?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "SequencedMap (part of JEP 431) extends Map with sequenced operations."
+    },
+    {
+        "id": 97,
+        "question": "What is the purpose of the new Collections.synchronizedSequencedMap() method?",
+        "options": [
+            "Thread-safe maps",
+            "Order-preserving synchronization",
+            "Concurrent modification detection",
+            "Lock-free iteration"
+        ],
+        "answer": 1,
+        "explanation": "This method creates synchronized views that preserve map order."
+    },
+    {
+        "id": 98,
+        "question": "Which Java 21 enhancement improves the performance of file copying?",
+        "options": [
+            "Files.copy() optimization",
+            "Memory-mapped transfers",
+            "Parallel copying",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "File copying benefits from multiple optimizations in Java 21."
+    },
+    {
+        "id": 99,
+        "question": "What is the purpose of the new Collections.unmodifiableSequencedSet() method?",
+        "options": [
+            "Immutable set creation",
+            "Order-preserving sets",
+            "Memory-efficient storage",
+            "Concurrent access"
+        ],
+        "answer": 0,
+        "explanation": "This method creates unmodifiable views of sequenced sets."
+    },
+    {
+        "id": 100,
+        "question": "Which Java 21 improvement helps with network socket operations?",
+        "options": [
+            "JEP 452",
+            "JEP 454",
+            "JEP 456",
+            "JEP 458"
+        ],
+        "answer": 1,
+        "explanation": "JEP 454: Foreign Function & Memory API includes improved socket support."
+    },
+    {
+        "id": 101,
+        "question": "What does the new Arrays.mismatch() overload for ranges do?",
+        "options": [
+            "Compares array subsets",
+            "Finds memory differences",
+            "Detects overflow",
+            "Optimizes sorting"
+        ],
+        "answer": 0,
+        "explanation": "The range-based overload compares specified portions of arrays."
+    },
+    {
+        "id": 102,
+        "question": "Which Java 21 feature introduces the SequencedCollection.reversed() method?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "reversed() (part of JEP 431) provides reverse-ordered views of collections."
+    },
+    {
+        "id": 103,
+        "question": "What is the purpose of the new Collections.synchronizedSequencedSet() method?",
+        "options": [
+            "Thread-safe sets",
+            "Order-preserving synchronization",
+            "Concurrent modification detection",
+            "Lock-free iteration"
+        ],
+        "answer": 1,
+        "explanation": "This method creates synchronized views that preserve set order."
+    },
+    {
+        "id": 104,
+        "question": "Which Java 21 enhancement improves the performance of regular expressions?",
+        "options": [
+            "Pattern matching optimization",
+            "New regex features",
+            "Reduced memory usage",
+            "All of the above"
+        ],
+        "answer": 3,
+        "explanation": "The regex engine received multiple optimizations."
+    },
+    {
+        "id": 105,
+        "question": "What is the purpose of the new Arrays.compareUnsigned() method?",
+        "options": [
+            "Compare unsigned integers",
+            "Safe numeric comparison",
+            "Overflow-resistant comparison",
+            "All of the above"
+        ],
+        "answer": 0,
+        "explanation": "compareUnsigned() properly compares arrays of integers as unsigned values."
+    },
+    {
+        "id": 106,
+        "question": "Which Java 21 feature introduces the SequencedMap.reversed() method?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "reversed() (part of JEP 431) provides reverse-ordered views of maps."
+    },
+    {
+        "id": 107,
+        "question": "What is the purpose of the new Collections.unmodifiableSequencedCollection() overload?",
+        "options": [
+            "Type-safe immutability",
+            "Reduced memory overhead",
+            "Faster iteration",
+            "Concurrent access"
+        ],
+        "answer": 0,
+        "explanation": "The overload provides better type safety for immutable collections."
+    },
+    {
+        "id": 108,
+        "question": "Which Java 21 improvement helps with process handling?",
+        "options": [
+            "JEP 452",
+            "JEP 454",
+            "JEP 456",
+            "JEP 458"
+        ],
+        "answer": 1,
+        "explanation": "JEP 454: Foreign Function & Memory API includes improved process interaction."
+    },
+    {
+        "id": 109,
+        "question": "What does the new Arrays.equals() overload for ranges do?",
+        "options": [
+            "Compares array subsets",
+            "Handles null elements",
+            "Optimizes memory comparison",
+            "Supports parallel comparison"
+        ],
+        "answer": 0,
+        "explanation": "The range-based overload compares specified portions of arrays."
+    },
+    {
+        "id": 110,
+        "question": "Which Java 21 feature introduces the SequencedSet.reversed() method?",
+        "options": [
+            "JEP 431",
+            "JEP 433",
+            "JEP 439",
+            "JEP 441"
+        ],
+        "answer": 0,
+        "explanation": "reversed() (part of JEP 431) provides reverse-ordered views of sets."
+    }
+]
