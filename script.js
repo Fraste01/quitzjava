@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	const viewresultsBtn = document.getElementById('view-results-btn');
 	const redoBtn = document.getElementById('redo-btn');
 	
+	// Navigation handlers
+    prevBtn.addEventListener('click', () => currentQuestionIndex > 0 && goToQuestion(currentQuestionIndex - 1));
+	nextBtn.addEventListener('click', () => currentQuestionIndex < questions.length - 1 && goToQuestion(currentQuestionIndex + 1));
+	submitBtn.addEventListener('click', submitExam);
+	viewresultsBtn.addEventListener('click', viewPreviousResults);
+	redoBtn.addEventListener('click', startNewExam);
+	
 	//Initial changes
 	document.body.classList.remove('exam-submitted');
     document.getElementById('view-results-btn').style.display = 'block';
@@ -27,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Exam variables
     let originalQuestions = [];
     let selectedQuestions = [];
+	let usedQuestionIds = [];
+	let currentQuestions = [];
     let questions = [];
     let currentQuestionIndex = 0;
     let userAnswers = [];
@@ -35,52 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let timerInterval;
 	let examAttempts = JSON.parse(localStorage.getItem('java21ExamAttempts')) || [];
 	
-	// Save and load the state of the exam
-	function saveExamState() {
-		const examState = {
-			questions: questions,
-			selectedQuestions: selectedQuestions,
-			currentQuestionIndex: currentQuestionIndex,
-			userAnswers: userAnswers,
-			timeLeft: timeLeft,
-			score: score
-		};
-		localStorage.setItem('java21ExamState', JSON.stringify(examState));
-	}
-
-	function loadExamState() {
-		const savedState = localStorage.getItem('java21ExamState');
-		if (savedState) {
-			const state = JSON.parse(savedState);
-			return confirm("Load previous exam progress?") ? state : null;
-		}
-		return null;
-	}
-    
-	function startNewExam() {
-		// Save current exam state if in progress
-		if (currentQuestionIndex >= 0 && !document.getElementById('submit-btn').classList.contains('hidden')) {
-			saveExamState();
-		}
-		
-		// Select new random questions
-		selectedQuestions = selectRandomQuestions(originalQuestions, EXAM_QUESTION_COUNT)
-			.map((q, i) => ({ ...q, id: i + 1 }));
-		questions = JSON.parse(JSON.stringify(selectedQuestions));
-		userAnswers = new Array(questions.length).fill(null);
-		currentQuestionIndex = 0;
-		score = 0;
-		timeLeft = 60 * 60;
-		
-		// Reset UI
-		document.getElementById('submit-btn').classList.remove('hidden');
-		document.body.classList.remove('exam-submitted');
-		explanationContainer.style.display = 'none';
-		startTimer();
-		showQuestion();
-	}
-	
-    fetch('questions.json')
+	// Fetch questions
+	fetch('questions.json')
 		.then(response => response.json())
 		.then(data => {
 			originalQuestions = data;
@@ -107,6 +72,60 @@ document.addEventListener('DOMContentLoaded', function() {
 		})
 		.catch(error => console.error('Error loading questions:', error));
     
+
+	// Save and load the state of the exam
+	function saveExamState() {
+		const examState = {
+			questions: questions,
+			selectedQuestions: selectedQuestions,
+			currentQuestionIndex: currentQuestionIndex,
+			userAnswers: userAnswers,
+			timeLeft: timeLeft,
+			score: score
+		};
+		localStorage.setItem('java21ExamState', JSON.stringify(examState));
+	}
+
+	function loadExamState() {
+		const savedState = localStorage.getItem('java21ExamState');
+		if (savedState) {
+			const state = JSON.parse(savedState);
+			return confirm("Load previous exam progress?") ? state : null;
+		}
+		return null;
+	}
+    
+	function startNewExam() {
+		// Filter out already used questions
+		const availableQuestions = originalQuestions.filter(
+			q => !usedQuestionIds.includes(q.id)
+		);
+		
+		// If not enough questions, reset tracking
+		if (availableQuestions.length < EXAM_QUESTION_COUNT) {
+			usedQuestionIds = [];
+			availableQuestions = [...originalQuestions];
+		}
+		
+		// Select new questions
+		const shuffled = [...availableQuestions].sort(() => 0.5 - Math.random());
+		currentQuestions = shuffled.slice(0, EXAM_QUESTION_COUNT).map((q, i) => ({
+			...q,
+			displayId: i + 1
+		}));
+		
+		// Reset exam state
+		questions = JSON.parse(JSON.stringify(currentQuestions));
+		userAnswers = new Array(questions.length).fill(null);
+		currentQuestionIndex = 0;
+		score = 0;
+		timeLeft = 60 * 60;
+		
+		// Update UI
+		document.body.classList.remove('exam-submitted');
+		startTimer();
+		showQuestion();
+	}
 	
     // Select random questions without replacement
     function selectRandomQuestions(questionPool, count) {
@@ -131,9 +150,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Display current question with properly ordered options
     function showQuestion() {
-        const question = questions[currentQuestionIndex];
-        questionText.textContent = `${question.id}. ${question.question}`;
-        optionsContainer.innerHTML = '';
+		const question = questions[currentQuestionIndex];
+    
+		// Clear previous content
+		questionText.innerHTML = '';
+		
+		// COMPLETELY clear the options container
+		while (optionsContainer.firstChild) {
+			optionsContainer.removeChild(optionsContainer.firstChild);
+		}
+		
+		// Add question number and text
+		const questionEl = document.createElement('div');
+		questionEl.textContent = `${question.id}. ${question.question}`;
+		questionText.appendChild(questionEl);
+		
+		if (question.code) {
+			const codeContainer = document.createElement('div');
+			codeContainer.className = 'code-container';
+			
+			// Use textContent first to ensure clean slate
+			const pre = document.createElement('pre');
+			const code = document.createElement('code');
+			code.textContent = question.code; // Set raw text first
+			
+			// Then apply highlighting
+			code.innerHTML = highlightJavaCode(question.code);
+			
+			pre.appendChild(code);
+			codeContainer.appendChild(pre);
+			questionText.appendChild(codeContainer);
+		}
         
         // Determine if we should randomize options
         const shouldRandomize = shouldRandomizeOptions(question);
@@ -215,13 +262,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
         progressBar.style.width = `${progress}%`;
     }
-    
-    // Navigation handlers
-    prevBtn.addEventListener('click', () => currentQuestionIndex > 0 && goToQuestion(currentQuestionIndex - 1));
-	nextBtn.addEventListener('click', () => currentQuestionIndex < questions.length - 1 && goToQuestion(currentQuestionIndex + 1));
-	submitBtn.addEventListener('click', submitExam);
-	viewresultsBtn.addEventListener('click', viewPreviousResults);
-	redoBtn.addEventListener('click', startNewExam);
     
 	// Add this to your navigation functions (next/prev)
 	function goToQuestion(index) {
@@ -316,46 +356,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 1000);
     }
-    
+    // Update timer every second in the UI
     function updateTimerDisplay() {
         const minutes = Math.floor(timeLeft / 60);
         const seconds = timeLeft % 60;
         timeSpan.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
-	
+
+	// Load the previous results.
 	function viewPreviousResults() {
 		const savedResults = localStorage.getItem('java21ExamResults');
-		/*if (savedResults) {
-			const results = JSON.parse(savedResults);
-			
-			// Display results (similar to submitExam but without calculation)
-			questionText.innerHTML = `
-				<div class="result-header">
-					<h2>Previous Exam Results</h2>
-					<div class="score-display ${results.isPassed ? 'passed' : 'failed'}">
-						${results.score}/${results.total} (${results.percentage}%)
-						<div class="pass-fail">${results.isPassed ? 'PASSED' : 'FAILED'}</div>
-						<div class="minimum">Minimum passing score: ${PASSING_PERCENTAGE}%</div>
-					</div>
-				</div>
-			`;
-			
-			let resultsHTML = '<div class="results-grid">';
-			results.questions.forEach((q, index) => {
-				resultsHTML += `
-					<div class="question-result ${q.isCorrect ? 'correct' : 'incorrect'}">
-						<h3>Question ${index + 1}: ${q.question}</h3>
-						<div class="user-answer">Your answer: ${q.userAnswer}</div>
-						<div class="correct-answer">Correct answer: ${q.correctAnswer}</div>
-						<div class="explanation">Explanation: ${q.explanation}</div>
-					</div>
-				`;
-			});
-			optionsContainer.innerHTML = resultsHTML;
-		} else {
-			alert("No previous results found");
-			return;
-		}*/
 		
 		if (examAttempts.length === 0) {
 			alert("No previous exam results found");
@@ -364,5 +374,36 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		// Show most recent attempt by default
 		showResultsOverview(examAttempts[examAttempts.length - 1]);
+	}
+	
+	// Function to highlight the Java code. TODO: Add more highlighs in the future if some are missing
+	function highlightJavaCode(code) {
+		// First escape ALL HTML special characters
+		const escape = str => str.replace(/[<>&]/g, c => 
+			({'<': '&lt;', '>': '&gt;', '&': '&amp;'})[c]);
+		
+		// Apply highlighting to the escaped code
+		let highlighted = escape(code)
+			.replace(/\b(class|public|static|void|int|String|new|final|interface|record|return|if|else|try|catch)\b/g, 
+				'[[KEYWORD]]$&[[/KEYWORD]]')
+			.replace(/"([^"]*)"/g, 
+				'[[STRING]]"$1"[[/STRING]]')
+			.replace(/\/\/.*$/gm, 
+				'[[COMMENT]]$&[[/COMMENT]]')
+			.replace(/\b(println|main|format|valueOf|getClass|invoke)\b/g, 
+				'[[METHOD]]$&[[/METHOD]]');
+		
+		// Convert temporary markers to actual spans
+		highlighted = highlighted
+			.replace(/\[\[KEYWORD\]\](.*?)\[\[\/KEYWORD\]\]/g, 
+				'<span class="code-keyword">$1</span>')
+			.replace(/\[\[STRING\]\](.*?)\[\[\/STRING\]\]/g, 
+				'<span class="code-string">$1</span>')
+			.replace(/\[\[COMMENT\]\](.*?)\[\[\/COMMENT\]\]/g, 
+				'<span class="code-comment">$1</span>')
+			.replace(/\[\[METHOD\]\](.*?)\[\[\/METHOD\]\]/g, 
+				'<span class="code-method">$1</span>');
+		
+		return highlighted;
 	}
 });
